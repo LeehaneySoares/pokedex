@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar__mobile {
+  background: #ff00ff;
+  height: 60px;
+  width: 100vw;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding: 0 20px;
+}
