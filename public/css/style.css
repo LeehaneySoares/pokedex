@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.header__mobile {
+  background-color: rgba(93, 81, 87, 0,9);
+  height: 60px;
+  width: 100vw;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 30px;
+}
+
+.header__icon {
+  height: 40px;
+  object-fit: contain;
+  width: 40px;
+}
+
+.header__name {
+  height: 40px;
+  width: 80px;
+}
+
+.header__menu-mobile {
+  background-color: transparent;
+  border: none;
+}
+
+.header__menu-mobile .menu-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.sidebar {
+  background-color: rgb(19, 18, 18);
+  color: #fff;
+  display: none;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  transition:
+      transform 618ms cubic-bezier(0.77, 0, 0.175, 1),
+      opacity 618ms cubic-bezier(0.77, 0, 0.175, 1),
+      visibility 618ms cubic-bezier(0.77, 0, 0.175, 1);
+  width: 100%;
+}
+
+.header__container.container__sidebar {
+  border-bottom: solid 1px #fff;
+}
+
+.sidebar__header {
+  height: 60px;
+  width: 100%;
+}
+
+.sidebar__main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.sidebar__main li {
+  line-height: 25px;
+  margin: 15px 0;
+  text-align: center;
+  width: 50%;
+}
+
+.sidebar__main li:hover {
+  background-color: #fff;
+  border-radius: 15px;
+  color: #000;
+}
+
+.pokemon__shelf {
+  display: grid !important;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 40px 30px;
+}
+
+.pokemon__figure {
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pokemon__figure > img {
+  border: 1px solid #ccc;
+  border-radius: 80px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.pokemon__caption {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
