@@ -8,7 +8,38 @@
     <title>Document</title>
   </head>
   <body>
-
-    <script src="./js/app.js"></script>
+    <header class="header header__mobile">
+      <div class="header__container container">
+        <a href="index.html">
+          <img class="header__icon" src="./assets/pokedex-icon.png" alt="Logo"/>
+        </a>
+        <img class="header__name" src="./assets/logo-header.png" alt="Pokedex">
+        <button class="header__menu-mobile">
+          <img class="menu-icon" src="./assets/menu-hamburguer.png" alt="Menu"/>
+        </button>
+      </div>
+    </header>
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="header__container container__sidebar">
+          <a href="index.html">
+            <img class="header__icon" src="./assets/pokedex-icon.png" alt="Logo"/>
+          </a>
+          <img class="header__name" src="./assets/logo-header.png" alt="Pokedex">
+          <button class="header__menu-mobile">
+            <img class="menu-icon" src="./assets/icon-close.png" alt="Close"/>
+          </button>
+        </div>
+      </div>
+      <ul class="sidebar__main">
+        <li><a>HOME</a></li>
+        <li><a>LIST</a></li>
+        <li><a>DETAILS</a></li>
+      </ul>
+    </aside>
+    <main class="pokemon-app">
+      <section class="pokemon__shelf container"></section>
+    </main>
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>
