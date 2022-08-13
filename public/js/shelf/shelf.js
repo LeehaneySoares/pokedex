@@ -1,15 +1,28 @@
 import Card from './card/index.js'
-import { $ } from '../shortcut.js'
+import Pagination from './pagination/index.js'
 
 class Shelf {
   #cards
+  #list
+  #pagination
 
   get cards () {
     return this.#cards ??= []
   }
 
+  get list () {
+    return this.#list ??= []
+  }
+
+  get pagination () {
+    return this.#pagination ??= Pagination.create(this)
+  } 
+
   constructor (cards) {
-    this.#cards = cards
+    for(let card of cards.slice(0, Pagination.limitVisible)) {
+      this.cards.push(card.template())
+    }
+    this.pagination
   }
 
   static create (pokemons) {
