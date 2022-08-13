@@ -20,7 +20,7 @@ class Card {
   constructor (name, types, img) {
     this.#img = img
     this.#name = name
-    this.#type = types[0]?.type.name
+    this.#type = types
   }
 
   template () {
@@ -38,7 +38,7 @@ class Card {
   static create (pokemon) {
     return new Card(
       pokemon?.name,
-      pokemon?.types,
+      pokemon?.types[0]?.type.name,
       storage.getImages(pokemon?.sprites),
     )
   }
