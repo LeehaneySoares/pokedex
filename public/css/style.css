@@ -23,7 +23,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  padding: 0 30px;
+  padding: 0 25px;
 }
 
 .header__icon {
@@ -96,6 +96,21 @@ html, body {
   gap: 10px;
   grid-template-columns: repeat(2, 1fr);
   padding: 40px 30px;
+}
+
+.pokemon__pagination.container {
+  justify-content: center;
+}
+
+.pokemon__button {
+  background: #a29bfe;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 15px;
+  width: 150px;
 }
 
 .pokemon__figure {
