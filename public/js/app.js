@@ -9,7 +9,7 @@ const app = () =>
   Promise.all(promisePokemon)
     .then(response => Shelf.create(response).cards)
     .then(cards => cards.forEach(card =>
-      section.innerHTML += card.template()
+      section.innerHTML += card
     ))
 
-app()
+export default app()
