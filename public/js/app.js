@@ -1,15 +1,5 @@
-import * as storage from './storage/index.js'
-import { $ } from './shortcut.js'
-import Shelf from './shelf/index.js'
+import Home from './home/index.js'
 
-const section = $('.pokemon__shelf')
-const promisePokemon = storage.generatePromises()
+const home = Home.create()
 
-const app = () =>
-  Promise.all(promisePokemon)
-    .then(response => Shelf.create(response).cards)
-    .then(cards => cards.forEach(card =>
-      section.innerHTML += card
-    ))
-
-export default app()
+export default home.mount()

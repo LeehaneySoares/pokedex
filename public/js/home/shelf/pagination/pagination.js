@@ -2,14 +2,10 @@ import button from './button/index.js'
 
 class Pagination {
   #parent
-  #more
-
-  get parent () {
-    return this.#parent
-  }
+  #more = 0
 
   get more () {
-    return this.#more ??= 0
+    return this.#more
   }
 
   static get limitVisible () {
@@ -22,12 +18,12 @@ class Pagination {
   }
 
   mountButton () {
-    button()
+    button(this)
     return this
   }
 
   inc () {
-    this.#more += Pagination.limitVisible
+    this.#parent.nextPage()
     return this
   }
 
