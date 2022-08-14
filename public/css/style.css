@@ -99,6 +99,7 @@ html, body {
 }
 
 .pokemon__pagination.container {
+  margin-bottom: 20px;
   justify-content: center;
 }
 
