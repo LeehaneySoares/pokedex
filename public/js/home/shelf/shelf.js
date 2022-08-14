@@ -30,20 +30,18 @@ class Shelf {
     return this.#startVisible ??= 1
   }
 
-  get promises () {
-    return Array()
-  }
-
   constructor (parent) {
     this.#parent = parent
     this.storage()
   }
 
   async storage () {
-    const response = await storage.generatePromises(this.startVisible, this.limitVisible)
-    this.#cards = response.map(pokemon => Card.create(pokemon))
+    await storage.generatePromises(
+      this.startVisible,
+      this.limitVisible,
+      this
+    )
     this.pagination
-    this.#parent.mount()
     return this
   }
 
@@ -51,6 +49,12 @@ class Shelf {
     this.#startVisible += this.limitVisible
     this.#limitVisible += this.limitVisible
     this.storage()
+    return this
+  }
+
+  update (snapshot) {
+    this.#cards = snapshot.map(pokemon => Card.create(pokemon))
+    this.#parent.mount()
     return this
   }
 
