@@ -18,9 +18,7 @@ class Home {
   }
 
   mount () {
-    this.cards.forEach(item =>
-      this.section.innerHTML += item.template()
-    )
+    this.cards.forEach(item => this.section.innerHTML += item.template())
     return this
   }
 
