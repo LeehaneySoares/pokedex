@@ -1,12 +1,19 @@
 import getAll from './getAll.js'
 
-export default async function (start, limitVisible, shelf) {
-  const arrayPokemons = []
+const limitPokemons = 1512
 
-  for (let index = start; index <= limitVisible; index++) {
-    await getAll(index)
-      .then(response => arrayPokemons.push(response))
-  }
+export default function (start, shelf) {
+  const arrayEmpty = Array.from({ length: 24 })
+  const arrayPromise = []
 
-  shelf.update(arrayPokemons)
+  start <= limitPokemons && (
+    arrayEmpty.forEach((_, index) =>
+      arrayPromise.push(getAll(start + index))
+    )
+  )
+
+  Promise.all(arrayPromise)
+    .then(response => shelf.update(response || []))
+
+  shelf.pagination
 }
