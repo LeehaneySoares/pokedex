@@ -5,7 +5,6 @@ import Pagination from './pagination/index.js'
 class Shelf {
   #cards
   #list
-  #limitVisible
   #parent
   #pagination
   #startVisible
@@ -18,10 +17,6 @@ class Shelf {
     return this.#list ??= []
   }
 
-  get limitVisible () {
-    return this.#limitVisible ??= 24
-  }
-
   get pagination () {
     return this.#pagination ??= Pagination.create(this)
   }
@@ -30,25 +25,28 @@ class Shelf {
     return this.#startVisible ??= 1
   }
 
+  static get limitVisible () {
+    return 24
+  }
+
   constructor (parent) {
     this.#parent = parent
     this.storage()
   }
 
-  async storage () {
-    await storage.generatePromises(
-      this.startVisible,
-      this.limitVisible,
-      this
-    )
-    this.pagination
+  storage () {
+    storage.generatePromises(this.startVisible, this)
     return this
   }
 
   nextPage () {
-    this.#startVisible += this.limitVisible
-    this.#limitVisible += this.limitVisible
+    this.#startVisible += Shelf.limitVisible
     this.storage()
+    return this
+  }
+
+  openModal () {
+    
     return this
   }
 
