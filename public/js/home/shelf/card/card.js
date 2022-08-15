@@ -1,4 +1,5 @@
 import * as storage from './storage/index.js'
+import types from './types.js'
 
 class Card {
   #img
@@ -38,8 +39,8 @@ class Card {
   static create (pokemon) {
     return new Card(
       pokemon?.name,
-      pokemon?.types[0]?.type.name,
-      storage.getImages(pokemon?.sprites),
+      types(pokemon?.types),
+      storage.getImages(pokemon?.sprites)
     )
   }
 }
