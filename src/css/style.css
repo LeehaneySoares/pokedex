@@ -164,24 +164,24 @@ model {
 }
 
 .fire {
-  background-color: #FDDFDF;
+  background-color: #eb4d4b;
 }
 
 .grass {
-  background-color: #DEFDE0;
+  background-color: #6ab04c;
 }
 
 .electric {
-  background-color: #FCF7DE;
+  background-color: #f6e58d;
 }
 
 .water,
 .ice {
-  background-color: #DEF3FD;
+  background-color: #7ed6df;
 }
 
 .ground {
-  background-color: #f4e7da;
+  background-color: #8395a7;
 }
 
 .rock {
@@ -189,15 +189,16 @@ model {
 }
 
 .fairy {
-  background-color: #fceaff;
+  background-color: #ff9ff3;
 }
 
 .poison {
-  background-color: #98d7a5;
+  background-color: #6D214F;
+  color: #fff;
 }
 
 .bug {
-  background-color: #f8d5a3;
+  background-color: #cc8e35;
 }
 
 .dragon {
@@ -209,7 +210,8 @@ model {
 }
 
 .flying {
-  background-color: #F5F5F5;
+  background-color: #c7ecee;
+  color: #000;
 }
 
 .fighting {
@@ -217,7 +219,7 @@ model {
 }
 
 .normal {
-  background-color: #F5F5F5;
+  background-color: #ced6e0;
 }
 
 .pokemon__figure > img {
@@ -256,25 +258,51 @@ model {
 
 .modal__area {
   background-color: #fff;
-  display: none;
+  display: block;
   flex-direction: column;
   height: 100%;
   padding: 20px;
   position: fixed;
-  top: 0;
+  top: -710px;
   width: 100%;
   z-index: 2;
 }
 
 .modal__close {
-  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--spacing_inset-sm);
   cursor: pointer;
-  padding: 10px;
+  padding: var(--spacing_inset-nano);
   position: absolute;
-  right: 0;
-  width: 40px;
+  right: 20px;
+  width: 35px;
+  z-index: 1;
 }
 
-.modal__close:hover img {
-  background-color: #ccc;
+.modal__close img {
+  height: 16px;
+  padding: var(--spacing_inset-quack);
+  width: 16px;
+}
+
+.modal__close:hover {
+  background-color: #ecf0f1;
+}
+
+.bk {
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.modal__img {
+  bottom: -85px;
+  position: absolute;
+  width: 320px;
 }

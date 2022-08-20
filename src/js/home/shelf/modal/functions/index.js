@@ -1,0 +1,5 @@
+export { default as abilities } from './abilities.js'
+export { default as moves } from './moves.js'
+export { default as sprites } from './sprites.js'
+export { default as stats } from './stats.js'
+export { default as types } from './types.js'

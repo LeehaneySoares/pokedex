@@ -1,10 +1,10 @@
 import template from './template.js'
+import * as f from './functions/index.js'
 
 class Modal {
   #abilities
   #baseExp
   #description
-  #especies
   #height
   #img
   #moves
@@ -14,16 +14,60 @@ class Modal {
   #types
   #weight
 
+  get abilities () {
+    return this.#abilities
+  }
+
+  get baseExp () {
+    return this.#baseExp
+  }
+
+  get description () {
+    return this.#description
+  }
+
+  get height () {
+    return this.#height
+  }
+
+  get img () {
+    return this.#img
+  }
+
+  get moves () {
+    return this.#moves
+  }
+
+  get name () {
+    return this.#name
+  }
+
+  get species () {
+    return this.#species
+  }
+
+  get stats () {
+    return this.#stats
+  }
+
+  get types () {
+    return this.#types
+  }
+
+  get weight () {
+    return this.#weight
+  }
+
   change (descriptor) {
-    this.#abilities = descriptor?.abilities
-    this.#baseExp = descriptor?.['base_experience']
+    this.#abilities = f.abilities(descriptor?.abilities)
+    this.#baseExp = descriptor?.base_experience
     this.#height = descriptor?.height
-    this.#img = descriptor?.sprites
-    this.#moves = descriptor?.moves
+    this.#img = f.sprites(descriptor?.sprites)
+    this.#moves = f.moves(descriptor?.moves)
     this.#name = descriptor?.name
-    this.#species = descriptor?.species
-    this.#stats = descriptor?.stats
-    this.#types = descriptor?.types
+    this.#species = descriptor?.species?.name
+    this.#stats = f.stats(descriptor?.stats)
+    this.#types = f.types(descriptor?.types)
     this.#weight = descriptor?.weight
     this.open()
     return this
@@ -34,7 +78,7 @@ class Modal {
   }
 
   open () {
-    template()
+    template(this)
     return this
   }
 
