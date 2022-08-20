@@ -73,7 +73,8 @@ class Modal {
     return this
   }
 
-  close () {
+  close (target) {
+    target.style.top = '-710px'
     return this
   }
 

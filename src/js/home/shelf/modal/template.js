@@ -1,13 +1,23 @@
+const modal = document.querySelector('.modal__area')
+const overlayer = document.querySelector('.modal__overlayer')
+const main = document.createElement('div')
+const img = document.createElement('img')
+const description = document.createElement('article')
+
+
+function closed (target) {
+  modal.querySelector('.modal__close')
+    .addEventListener('click', () => target.close(modal))
+}
+
 function styled (target) {
   target.style.top = 0
 }
 
 export default function (info) {
+  closed(info)
   const type = info.types.split(' | ')
-  const modal = document.querySelector('.modal__area')
-  const main = document.createElement('div')
-  const description = document.createElement('article')
-  const img = document.createElement('img')
+  
   img.setAttribute('class', 'modal__img')
   img.src = info.img
 
