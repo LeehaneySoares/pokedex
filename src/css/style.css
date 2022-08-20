@@ -264,6 +264,7 @@ model {
   padding: 20px;
   position: fixed;
   top: -710px;
+  transition: 618ms cubic-bezier(0.77, 0, 0.175, 1);
   width: 100%;
   z-index: 2;
 }

@@ -1,5 +1,4 @@
 function styled (target) {
-  target.style.transition = 'tranform 618ms cubic-bezier(0.77, 0, 0.175, 1)'
   target.style.top = 0
 }
 
