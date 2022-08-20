@@ -1,6 +1,7 @@
 import * as storage from './storage/index.js'
 import Card from './card/index.js'
 import Pagination from './pagination/index.js'
+import Modal from './modal/index.js'
 
 class Shelf {
   #cards
@@ -8,6 +9,8 @@ class Shelf {
   #parent
   #pagination
   #startVisible
+  #modal
+  #snapshot
 
   get cards () {
     return this.#cards ??= []
@@ -17,8 +20,16 @@ class Shelf {
     return this.#list ??= []
   }
 
+  get modal () {
+    return this.#modal
+  }
+
   get pagination () {
-    return this.#pagination ??= Pagination.create(this)
+    return this.#pagination
+  }
+
+  get snapshot () {
+    return this.#snapshot ??= {}
   }
 
   get startVisible () {
@@ -28,9 +39,11 @@ class Shelf {
   static get limitVisible () {
     return 24
   }
-
+  
   constructor (parent) {
     this.#parent = parent
+    this.#modal = Modal.create()
+    this.#pagination = Pagination.create(this)
     this.storage()
   }
 
@@ -45,14 +58,15 @@ class Shelf {
     return this
   }
 
-  openModal () {
-    
+  async update (snapshot) {
+    this.#snapshot = snapshot
+    this.#cards = await this.snapshot.map(pokemon => Card.create(pokemon, this))
+    this.#parent.mount()
     return this
   }
 
-  update (snapshot) {
-    this.#cards = snapshot.map(pokemon => Card.create(pokemon))
-    this.#parent.mount()
+  openModal (descriptor) {
+    this.modal.change(descriptor, this.snapshot)
     return this
   }
 

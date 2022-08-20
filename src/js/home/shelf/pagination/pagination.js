@@ -4,6 +4,15 @@ import button from './button/index.js'
 class Pagination {
   #parent
   #hasNextPage
+  #pagination
+
+  get action () {
+    return 'Ver mais'
+  }
+
+  get pagination () {
+    return this.#pagination
+  }
 
   get hasNextPage () {
     return this.#hasNextPage ??= true
@@ -19,12 +28,17 @@ class Pagination {
 
   constructor (parent) {
     this.#parent = parent
-    button(this)
+    this.mountButton()
   }
 
   hiddenButton () {
     this.#hasNextPage = !this.hasNextPage
     this.buttonPaginate.setAttribute('show', this.hasNextPage)
+    return this
+  }
+
+  mountButton () {
+    this.#pagination = button(this)
     return this
   }
 

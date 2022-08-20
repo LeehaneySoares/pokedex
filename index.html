@@ -9,6 +9,17 @@
     <title>Pokedex</title>
   </head>
   <body>
+
+    <model>
+      <figure id="pokemon_0" class="pokemon__figure">
+        <img src="" alt="" />
+        <figcaption class="pokemon__caption">
+          <h3 class="pokemon__name"></h3>
+          <strong class="pokemon__type"></strong>
+        </figcaption>
+      </figure>
+    </model>
+
     <header class="header header__mobile">
       <div class="header__container container">
         <a href="index.html">
@@ -28,7 +39,7 @@
           </a>
           <img class="header__name" src="./assets/logo-header.png" alt="Pokedex">
           <button class="header__menu-mobile">
-            <img class="menu-icon" src="./assets/icon-close.png" alt="Close"/>
+            <img class="menu-icon" src="./assets/close.png" alt="Close"/>
           </button>
         </div>
       </div>
@@ -44,7 +55,9 @@
       <div class="pokemon__pagination container"></div>
     </main>
     <aside class="modal__area">
-      ...
+      <button class="modal__close">
+        <img src="./assets/close.png" alt="close"/>
+      </button>
     </aside>
     <div class="modal__overlayer"></div>
     <script type="module" src="./src/js/index.js"></script>

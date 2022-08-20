@@ -1,8 +1,7 @@
 import getAll from './getAll.js'
 
-const limitPokemons = 1512
-
 export default function (start, shelf) {
+  const limitPokemons = 1512
   const arrayEmpty = Array.from({ length: 24 })
   const arrayPromise = []
 
@@ -10,10 +9,7 @@ export default function (start, shelf) {
     arrayEmpty.forEach((_, index) =>
       arrayPromise.push(getAll(start + index))
     )
-  )
-
+  ), 
   Promise.all(arrayPromise)
     .then(response => shelf.update(response || []))
-
-  shelf.pagination
 }

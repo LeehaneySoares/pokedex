@@ -17,8 +17,8 @@ class Home {
     return this.shelf?.cards
   }
 
-  mount () {
-    this.cards.forEach(item => this.section.innerHTML += item.template())
+  async mount () {
+    await this.cards.forEach(item => this.section.appendChild(item.template()))
     return this
   }
 
