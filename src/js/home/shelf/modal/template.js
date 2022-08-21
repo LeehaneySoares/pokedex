@@ -15,15 +15,15 @@ function styled (target) {
 }
 
 export default function (info) {
-  closed(info)
   const type = info.types.split(' | ')
   
   img.setAttribute('class', 'modal__img')
   img.src = info.img
-
+  
   main.setAttribute('class', `bk ${type[0]}`)
   main.appendChild(img)
-
+  
   modal.appendChild(main)
   styled(modal)
+  closed(info)
 }

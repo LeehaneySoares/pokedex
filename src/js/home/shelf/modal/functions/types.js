@@ -1,6 +1,6 @@
-const type = []
+export default function (types) {
+  const type = []
 
-export default (types) => (
-  types.forEach(item => type.push(item.type?.name)),
-  type.join(' | ')
-)
+  types.forEach(item => type.push(item.type?.name))
+  return type.join(' | ')
+}
