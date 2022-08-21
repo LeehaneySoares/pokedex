@@ -65,8 +65,8 @@ class Shelf {
     return this
   }
 
-  openModal (descriptor) {
-    this.modal.change(descriptor, this.snapshot)
+  openModal (descriptor, images) {
+    this.modal.change(descriptor, images)
     return this
   }
 

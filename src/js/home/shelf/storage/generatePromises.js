@@ -1,7 +1,7 @@
 import getAll from './getAll.js'
 
 export default function (start, shelf) {
-  const limitPokemons = 1512
+  const limitPokemons = 905
   const arrayEmpty = Array.from({ length: 24 })
   const arrayPromise = []
 

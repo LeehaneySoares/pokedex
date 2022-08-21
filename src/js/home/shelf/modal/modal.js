@@ -63,11 +63,11 @@ class Modal {
     return this.#weight
   }
 
-  change (descriptor) {
+  change (descriptor, images) {
     this.#abilities = f.abilities(descriptor?.abilities)
     this.#baseExp = descriptor?.base_experience
     this.#height = descriptor?.height
-    this.#img = f.sprites(descriptor?.sprites)
+    this.#img = images
     this.#moves = f.moves(descriptor?.moves)
     this.#name = descriptor?.name
     this.#species = descriptor?.species?.name

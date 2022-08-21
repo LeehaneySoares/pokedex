@@ -51,14 +51,14 @@ class Card {
   }
 
   template () {
-    events.openModal(this)
+    events.openModal(this, this.img)
     return this.figure
   }
 
   static create (pokemon, parent) {
     const name = pokemon?.name
     const type = types(pokemon?.types)
-    const img = storage.getImages(pokemon?.sprites)
+    const img = storage.getImages(pokemon)
     const id = pokemon?.id
     return new Card(name, type, img, id, pokemon, parent)
   }

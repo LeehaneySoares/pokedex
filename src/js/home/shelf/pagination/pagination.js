@@ -23,7 +23,7 @@ class Pagination {
   }
 
   static get limitPokemons () {
-    return 1512
+    return 905
   }
 
   constructor (parent) {
