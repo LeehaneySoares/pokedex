@@ -194,7 +194,7 @@ model {
 
 .poison {
   background-color: #6D214F;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .bug {
@@ -220,6 +220,11 @@ model {
 
 .normal {
   background-color: #ced6e0;
+}
+
+.ghost {
+  background-color: #57606f;
+  color: #f5f5f5;
 }
 
 .pokemon__figure > img {
@@ -258,15 +263,28 @@ model {
 
 .modal__area {
   background-color: #fff;
-  display: block;
+  display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 20px;
   position: fixed;
-  top: -710px;
+  top: -1000px;
   transition: 618ms cubic-bezier(0.77, 0, 0.175, 1);
   width: 100%;
   z-index: 2;
+}
+
+.modal__area[opened="false"] {
+  top: -1000px;
+}
+
+.modal__area[opened="true"] {
+  top: 0;
+}
+
+@media (min-width: 769px) {
+  .modal__area {
+    max-width: 572px;
+  }
 }
 
 .modal__close {
@@ -274,6 +292,7 @@ model {
   border: none;
   border-radius: var(--spacing_inset-sm);
   cursor: pointer;
+  margin-top: var(--spacing_inset-nano);
   padding: var(--spacing_inset-nano);
   position: absolute;
   right: 20px;
@@ -296,8 +315,11 @@ model {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-nano);
   height: 50%;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: var(--spacing_inset-xs);
   position: relative;
   width: 100%;
 }
@@ -306,4 +328,12 @@ model {
   bottom: -85px;
   position: absolute;
   width: 320px;
+}
+
+.modal__desc {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 50%;
+  padding: var(--spacing_inset-lg) var(--spacing_inset-sm);
 }

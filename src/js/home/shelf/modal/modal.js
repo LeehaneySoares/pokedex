@@ -9,6 +9,7 @@ class Modal {
   #img
   #moves
   #name
+  #opened = false
   #species
   #stats
   #types
@@ -40,6 +41,10 @@ class Modal {
 
   get name () {
     return this.#name
+  }
+
+  get opened () {
+    return this.#opened
   }
 
   get species () {
@@ -74,11 +79,12 @@ class Modal {
   }
 
   close (target) {
-    target.style.top = '-710px'
+    target.style.top = '-1000px';
     return this
   }
 
   open () {
+    this.#opened = true
     template(this)
     return this
   }
