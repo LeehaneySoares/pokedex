@@ -4,70 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="icon" href="./assets/pokedex-icon.png" />
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
     <title>Pokedex</title>
   </head>
   <body>
-
-    <model>
-      <figure id="pokemon_0" class="pokemon__figure">
-        <img src="" alt="" />
-        <figcaption class="pokemon__caption">
-          <h3 class="pokemon__name"></h3>
-          <strong class="pokemon__type"></strong>
-        </figcaption>
-      </figure>
-    </model>
-
-    <header class="header header__mobile">
-      <div class="header__container container">
-        <a href="index.html">
-          <img class="header__icon" src="./assets/pokedex-icon.png" alt="Logo"/>
-        </a>
-        <img class="header__name" src="./assets/logo-header.png" alt="Pokedex">
-        <button class="header__menu-mobile">
-          <img class="menu-icon" src="./assets/menu-hamburguer.png" alt="Menu"/>
-        </button>
-      </div>
-    </header>
-    <aside class="sidebar">
-      <div class="sidebar__header">
-        <div class="header__container container__sidebar">
-          <a href="index.html">
-            <img class="header__icon" src="./assets/pokedex-icon.png" alt="Logo"/>
-          </a>
-          <img class="header__name" src="./assets/logo-header.png" alt="Pokedex">
-          <button class="header__menu-mobile">
-            <img class="menu-icon" src="./assets/close.png" alt="Close"/>
-          </button>
-        </div>
-      </div>
-      <ul class="sidebar__main">
-        <li><a>HOME</a></li>
-        <li><a>LIST</a></li>
-        <li><a>DETAILS</a></li>
-      </ul>
-    </aside>
-    <main class="pokemon-app">
-      <h2 class="pokemon__app-title container">Catálogo de pokemons</h2>
-      <section class="pokemon__shelf container"></section>
-      <div class="pokemon__pagination container"></div>
-    </main>
-    <aside class="modal__area">
-      <button class="modal__close">
-        <img src="./assets/close.png" alt="close"/>
-      </button>
-    </aside>
-    <div class="modal__overlayer"></div>
-    <script type="module" src="./src/js/index.js"></script>
-    <!-- <poke-card class="poke-card" name="Bulbasaur" type="Grass"
-      avatar="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png">
-    </poke-card>
-
-    <poke-card class="poke-card" name="Charmander" type="Fire"
-      avatar="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png">
-    </poke-card> -->
-    <script src="./pokeCard.js"></script>
+    <poke-model></poke-model>
+    <script type="module" src="./src/model/index.js"></script>
   </body>
 </html>
