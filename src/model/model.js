@@ -17,12 +17,6 @@ class Model extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template().content.cloneNode(true))
     this.shadowRoot.querySelector('main').appendChild(this.shelf)
-    this.mount()
-    return this
-  }
-
-  mount () {
-    
     return this
   }
 }
