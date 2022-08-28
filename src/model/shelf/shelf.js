@@ -1,15 +1,20 @@
 import * as storage from './storage/index.js'
 import Pagination from './pagination/index.js'
 import PokeCard from './card/pokeCard.js'
-import template from './template.js'
+import component from './component.js'
 
 class Shelf extends HTMLElement {
   #cards
+  #modal
   #startVisible = 1
   #pagination
 
   get cards () {
     return this.#cards ??= []
+  }
+
+  get modal () {
+    return this.#modal ??= ''
   }
 
   get pagination () {
@@ -20,13 +25,14 @@ class Shelf extends HTMLElement {
     return this.#startVisible
   }
 
-  constructor () {
+  constructor (modal) {
     super()
     this.build()
+    this.#modal = modal
   }
 
   build () {
-    this.appendChild(template.content.cloneNode(true))
+    this.appendChild(component.content.cloneNode(true))
     this.appendChild(this.pagination)
     this.storage()
     return this
@@ -35,6 +41,11 @@ class Shelf extends HTMLElement {
   changePage (pageActual) {
     this.#startVisible += pageActual
     this.storage()
+    return this
+  }
+
+  openModal (schema) {
+    this.modal.changeInfo(schema)
     return this
   }
 
@@ -51,8 +62,8 @@ class Shelf extends HTMLElement {
     return this
   }
 
-  static create () {
-    return new Shelf()
+  static create (parent) {
+    return new Shelf(parent?.modal)
   }
 }
 

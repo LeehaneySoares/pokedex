@@ -1,4 +1,4 @@
-import template from './template.js'
+import component from './component.js'
 
 class Pagination extends HTMLElement {
   #parent
@@ -15,7 +15,9 @@ class Pagination extends HTMLElement {
 
   build () {
     this.attachShadow({ mode: 'open' })
-    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    this.shadowRoot.appendChild(
+      component.content.cloneNode(true)
+    )
     this.mount()
     return this
   }

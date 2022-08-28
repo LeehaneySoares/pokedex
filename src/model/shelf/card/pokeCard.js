@@ -1,13 +1,17 @@
-import getImages from './getImages.js'
-import template from './template.js'
-import types from './types.js'
+import * as services from './services/index.js'
+import component from './component.js'
+import schema from './schema.js'
 
 class PokeCard extends HTMLElement {
-  #id
   #img
   #name
   #parent
+  #pokemon
   #type
+
+  get id () {
+    return this.pokemon?.id
+  }
 
   get img () {
     return this.#img ??= ''
@@ -17,22 +21,27 @@ class PokeCard extends HTMLElement {
     return this.#name ??= ''
   }
 
+  get pokemon () {
+    return this.#pokemon ??= ''
+  }
+
   get type () {
     return this.#type ??= ''
   }
 
-  constructor (name, id, type, img, parent) {
+  constructor (img, type, name, pokemon, parent) {
     super()
-    this.#name = name
-    this.#id = id
-    this.#type = type
     this.#img = img
+    this.#name = name
     this.#parent = parent
+    this.#pokemon = pokemon
+    this.#type = type
+    console.log(pokemon)
     this.build()
   }
 
   build () {
-    this.appendChild(template.content.cloneNode(true))
+    this.appendChild(component.content.cloneNode(true))
     this.mount()
     return this
   }
@@ -43,16 +52,24 @@ class PokeCard extends HTMLElement {
     figure.setAttribute('type', this.type.split(' | ')[0])
     figure.querySelector('img').src = this.img
     caption.querySelector('strong').innerText = this.name
-    caption.querySelector('span').innerText = this.type    
+    caption.querySelector('span').innerText = this.type
+    figure.addEventListener('click', () => this.eventClick())
+    return this
+  }
+
+  eventClick () {
+    this.#parent.openModal(schema(this))
     return this
   }
 
   static create (pokemon, parent) {
-    const name = pokemon?.name
-    const id = pokemon?.id
-    const type = types(pokemon?.types)
-    const img = getImages(pokemon)
-    return new PokeCard(name, id, type, img, parent)
+    return new PokeCard(
+      services.getImages(pokemon?.id),
+      services.getTypes(pokemon?.types),
+      pokemon?.name,
+      pokemon,
+      parent
+    )
   }
 }
 

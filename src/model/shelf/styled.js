@@ -6,6 +6,30 @@ const styled = `
       padding: 0;
     }
 
+    .poke__shelf {
+      align-items: center;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 980px;
+      padding: 40px 0;
+      width: 100%;
+    }
+
+    @media (min-width: 525px) {
+      .poke__shelf {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .poke__shelf {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
     .pokemon__figure {
       align-items: center;
       border: 1px solid #ccc;
@@ -116,30 +140,6 @@ const styled = `
       padding: 10px 0;
       text-align: center;
       width: 100%;
-    }
-
-    .poke__shelf {
-      align-items: center;
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
-      margin: 0 auto;
-      max-width: 1020px;
-      padding: 40px 20px;
-      width: 100%;
-    }
-
-    @media (min-width: 525px) {
-      .poke__shelf {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    @media (min-width: 769px) {
-      .poke__shelf {
-        grid-template-columns: repeat(4, 1fr);
-      }
     }
   </style>
 `
