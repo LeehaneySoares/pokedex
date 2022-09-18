@@ -9,5 +9,4 @@ template.innerHTML = `
     </figcaption>
   </figure>
 `
-
 export default template

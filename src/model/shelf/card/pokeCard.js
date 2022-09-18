@@ -36,7 +36,6 @@ class PokeCard extends HTMLElement {
     this.#parent = parent
     this.#pokemon = pokemon
     this.#type = type
-    console.log(pokemon)
     this.build()
   }
 

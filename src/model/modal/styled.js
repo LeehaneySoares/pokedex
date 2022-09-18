@@ -15,12 +15,15 @@ const styled = `
     }
 
     .modal__close {
+      align-items: center;
       background-color: transparent;
       border: none;
       border-radius: 24px;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
       margin-top: 12px;
-      padding: 12px;
+      padding: 13px;
       position: absolute;
       right: 20px;
       top: 0;
@@ -29,9 +32,8 @@ const styled = `
     }
 
     .modal__close img {
-      height: 16px;
-      padding: var(--spacing_inset-quack);
-      width: 16px;
+      height: 12px;
+      width: 12px;
     }
     
     .modal__close:hover {
@@ -64,13 +66,14 @@ const styled = `
       display: grid;
       gap: 15px;
       grid-template-columns: 1fr;
-      padding: 24px;
+      padding: 24px 40px;
     }
 
     .modal__desc {
       align-items: center;
       display: flex;
       gap: 24px;
+      justify-content: space-between;
     }
 
     .modal__overlayer {

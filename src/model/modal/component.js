@@ -6,7 +6,7 @@ template.innerHTML = `
   ${styled}
   <aside class="modal">
     <button class="modal__close">
-      <img src="./assets/close.png" />
+      <img src="./assets/images/close.png" />
     </button>
     <div class="modal__sup">
     </div>

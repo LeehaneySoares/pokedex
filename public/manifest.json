@@ -1,0 +1,15 @@
+{
+  "dir": "ltr",
+  "lang": "pt-BR",
+  "name": "Pokedex Web",
+  "short_name": "Pokdex",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Uma simples pokedex para os fãs de Pokemon.",
+  "icons": [{
+    "src": "./assets/pokedex-icon.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }]
+}
