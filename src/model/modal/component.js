@@ -1,4 +1,5 @@
 import styled from './styled.js'
+import * as images from '../../images'
 
 const template = document.createElement('template')
 
@@ -6,7 +7,7 @@ template.innerHTML = `
   ${styled}
   <aside class="modal">
     <button class="modal__close">
-      <img src="./assets/images/close.png" />
+      <img src="${images.close}" />
     </button>
     <div class="modal__sup">
     </div>

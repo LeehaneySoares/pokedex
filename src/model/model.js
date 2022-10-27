@@ -1,6 +1,6 @@
+import component from './component.js'
 import Modal from './modal/index.js'
 import Shelf from './shelf/index.js'
-import component from './component.js'
 
 class Model extends HTMLElement {
   #modal

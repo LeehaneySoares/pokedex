@@ -1,6 +1,55 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/appendIcon.js":
+/*!***************************!*\
+  !*** ./src/appendIcon.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _images__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images */ "./src/images/index.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((function () {
+  var head = document.head;
+  var link = document.createElement('link');
+  link.setAttribute('rel', 'icon');
+  link.setAttribute('type', 'image/png');
+  link.setAttribute('href', _images__WEBPACK_IMPORTED_MODULE_0__.pokedexIcon);
+  head.appendChild(link);
+})());
+
+/***/ }),
+
+/***/ "./src/images/index.js":
+/*!*****************************!*\
+  !*** ./src/images/index.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "close": () => (/* reexport safe */ _close_png__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "logoHeader": () => (/* reexport safe */ _logo_header_png__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   "menuHamburguer": () => (/* reexport safe */ _menu_hamburguer_png__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   "pokedexIcon": () => (/* reexport safe */ _pokedex_icon_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+/* harmony export */ });
+/* harmony import */ var _close_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./close.png */ "./src/images/close.png");
+/* harmony import */ var _logo_header_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logo-header.png */ "./src/images/logo-header.png");
+/* harmony import */ var _menu_hamburguer_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./menu-hamburguer.png */ "./src/images/menu-hamburguer.png");
+/* harmony import */ var _pokedex_icon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pokedex-icon.png */ "./src/images/pokedex-icon.png");
+
+
+
+
+
+/***/ }),
+
 /***/ "./src/model/component.js":
 /*!********************************!*\
   !*** ./src/model/component.js ***!
@@ -13,9 +62,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _styled_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styled.js */ "./src/model/styled.js");
+/* harmony import */ var _images__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images */ "./src/images/index.js");
+
 
 var template = document.createElement('template');
-template.innerHTML = "\n  ".concat(_styled_js__WEBPACK_IMPORTED_MODULE_0__["default"], "\n  <header>\n    <div class=\"container\">\n      <img class=\"header__icon\" src=\"./assets/images/pokedex-icon.png\" alt=\"Logo\" />\n      <img class=\"header__logo\" src=\"./assets/images/logo-header.png\" alt=\"Pokedex\" />\n      <button class=\"header__menu-mobile\">\n        <img class=\"menu-icon\" src=\"./assets/images/menu-hamburguer.png\" alt=\"menu\" />\n      </button>\n    </div>\n  </header>\n  <main class=\"main container\">\n  </main>\n  <footer class=\"footer\">\n    <div class=\"container\">\n      <span>\xA9 Copyright, Leehaney Soares - Developer</span>\n    </div>\n  </footer>\n");
+template.innerHTML = "\n  ".concat(_styled_js__WEBPACK_IMPORTED_MODULE_0__["default"], "\n  <header>\n    <div class=\"container\">\n      <img class=\"header__icon\" src=\"").concat(_images__WEBPACK_IMPORTED_MODULE_1__.pokedexIcon, "\" alt=\"Logo\" />\n      <img class=\"header__logo\" src=\"").concat(_images__WEBPACK_IMPORTED_MODULE_1__.logoHeader, "\" alt=\"Pokedex\" />\n      <button class=\"header__menu-mobile\">\n        <img class=\"menu-icon\" src=\"").concat(_images__WEBPACK_IMPORTED_MODULE_1__.menuHamburguer, "\" alt=\"menu\" />\n      </button>\n    </div>\n  </header>\n  <main class=\"main container\">\n  </main>\n  <footer class=\"footer\">\n    <div class=\"container\">\n      <span>\xA9 Copyright, Leehaney Soares - Developer</span>\n    </div>\n  </footer>\n");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (template);
 
 /***/ }),
@@ -69,9 +120,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _styled_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styled.js */ "./src/model/modal/styled.js");
+/* harmony import */ var _images__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images */ "./src/images/index.js");
+
 
 var template = document.createElement('template');
-template.innerHTML = "\n  ".concat(_styled_js__WEBPACK_IMPORTED_MODULE_0__["default"], "\n  <aside class=\"modal\">\n    <button class=\"modal__close\">\n      <img src=\"./assets/images/close.png\" />\n    </button>\n    <div class=\"modal__sup\">\n    </div>\n    <ul class=\"modal__stat\">\n    </ul>\n    <ul class=\"modal__moves\"></ul>\n  </aside>\n  <div class=\"modal__overlayer\"></div>\n");
+template.innerHTML = "\n  ".concat(_styled_js__WEBPACK_IMPORTED_MODULE_0__["default"], "\n  <aside class=\"modal\">\n    <button class=\"modal__close\">\n      <img src=\"").concat(_images__WEBPACK_IMPORTED_MODULE_1__.close, "\" />\n    </button>\n    <div class=\"modal__sup\">\n    </div>\n    <ul class=\"modal__stat\">\n    </ul>\n    <ul class=\"modal__moves\"></ul>\n  </aside>\n  <div class=\"modal__overlayer\"></div>\n");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (template);
 
 /***/ }),
@@ -353,9 +406,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _modal_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal/index.js */ "./src/model/modal/index.js");
-/* harmony import */ var _shelf_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shelf/index.js */ "./src/model/shelf/index.js");
-/* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component.js */ "./src/model/component.js");
+/* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component.js */ "./src/model/component.js");
+/* harmony import */ var _modal_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal/index.js */ "./src/model/modal/index.js");
+/* harmony import */ var _shelf_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shelf/index.js */ "./src/model/shelf/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -438,14 +491,14 @@ var Model = /*#__PURE__*/function (_HTMLElement) {
     get: function get() {
       var _classPrivateFieldGet2;
 
-      return (_classPrivateFieldGet2 = _classPrivateFieldGet(this, _modal)) !== null && _classPrivateFieldGet2 !== void 0 ? _classPrivateFieldGet2 : _classPrivateFieldSet(this, _modal, _modal_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].create(this));
+      return (_classPrivateFieldGet2 = _classPrivateFieldGet(this, _modal)) !== null && _classPrivateFieldGet2 !== void 0 ? _classPrivateFieldGet2 : _classPrivateFieldSet(this, _modal, _modal_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].create(this));
     }
   }, {
     key: "shelf",
     get: function get() {
       var _classPrivateFieldGet3;
 
-      return (_classPrivateFieldGet3 = _classPrivateFieldGet(this, _shelf)) !== null && _classPrivateFieldGet3 !== void 0 ? _classPrivateFieldGet3 : _classPrivateFieldSet(this, _shelf, _shelf_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].create(this));
+      return (_classPrivateFieldGet3 = _classPrivateFieldGet(this, _shelf)) !== null && _classPrivateFieldGet3 !== void 0 ? _classPrivateFieldGet3 : _classPrivateFieldSet(this, _shelf, _shelf_index_js__WEBPACK_IMPORTED_MODULE_2__["default"].create(this));
     }
   }, {
     key: "build",
@@ -453,7 +506,7 @@ var Model = /*#__PURE__*/function (_HTMLElement) {
       this.attachShadow({
         mode: 'open'
       });
-      this.shadowRoot.appendChild(_component_js__WEBPACK_IMPORTED_MODULE_2__["default"].content.cloneNode(true));
+      this.shadowRoot.appendChild(_component_js__WEBPACK_IMPORTED_MODULE_0__["default"].content.cloneNode(true));
       this.shadowRoot.querySelector('main').appendChild(this.shelf);
       this.shadowRoot.querySelector('main').appendChild(this.modal);
       return this;
@@ -27161,6 +27214,66 @@ module.exports = function (item) {
 
 /***/ }),
 
+/***/ "./src/images/close.png":
+/*!******************************!*\
+  !*** ./src/images/close.png ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "361ad9a0e632f77b39167e620f28d5e5.png");
+
+/***/ }),
+
+/***/ "./src/images/logo-header.png":
+/*!************************************!*\
+  !*** ./src/images/logo-header.png ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "bda000cf054ae279733f7e1579e753f5.png");
+
+/***/ }),
+
+/***/ "./src/images/menu-hamburguer.png":
+/*!****************************************!*\
+  !*** ./src/images/menu-hamburguer.png ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "89ab2665e4b0cd534ed22d4fc4690571.png");
+
+/***/ }),
+
+/***/ "./src/images/pokedex-icon.png":
+/*!*************************************!*\
+  !*** ./src/images/pokedex-icon.png ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "373537e792c1ac3887fe9a8a6d77a196.png");
+
+/***/ }),
+
 /***/ "./node_modules/regenerator-runtime/runtime.js":
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
@@ -28371,6 +28484,26 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -28390,7 +28523,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var regenerator_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
 /* harmony import */ var regenerator_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./model */ "./src/model/index.js");
-/* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/css/style.css */ "./src/assets/css/style.css");
+/* harmony import */ var _appendIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./appendIcon */ "./src/appendIcon.js");
+/* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/css/style.css */ "./src/assets/css/style.css");
+
 
 
 

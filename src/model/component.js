@@ -1,14 +1,15 @@
 import styled from './styled.js'
+import * as images from '../images'
 
 const template = document.createElement('template')
 template.innerHTML = `
   ${styled}
   <header>
     <div class="container">
-      <img class="header__icon" src="./assets/images/pokedex-icon.png" alt="Logo" />
-      <img class="header__logo" src="./assets/images/logo-header.png" alt="Pokedex" />
+      <img class="header__icon" src="${images.pokedexIcon}" alt="Logo" />
+      <img class="header__logo" src="${images.logoHeader}" alt="Pokedex" />
       <button class="header__menu-mobile">
-        <img class="menu-icon" src="./assets/images/menu-hamburguer.png" alt="menu" />
+        <img class="menu-icon" src="${images.menuHamburguer}" alt="menu" />
       </button>
     </div>
   </header>
